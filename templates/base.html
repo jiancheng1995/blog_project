@@ -1,18 +1,35 @@
+<!-- templates/base.html -->
 {% load static %}
-<html >
-<head>
+<html>
+    <head>
+        <title>Django blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:���" rel="\
+stylesheet">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    </head>
 
-    <title>Django blog</title>
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400"\rel="stylesheet">
-    <link rel="stylesheet" href= "{% static 'css/base' %}">
-</head>
-<body>
-    </header>
-       <h1><a href="/">Django blog</a></h1>
-       </h1>header>
-           <div class="container">
-               { % block content %}
-               { % enblock content  %}
-       </div>
+    <body>
+            <div class="nav-left"></div>
+
+                </header>
+                    <div class="nav-left"></div>
+                    <h1><a href="/">Django blog</a></h1>
+    </body>
+        <div class="nav-right">
+        <a href="{% url 'post_new' %}" >+ New Blog post</a>
+     </div>
+            <header>
+            {% if user.is_authenticated %}
+                  <p>Hi {{ user.username }}!</p>
+                  <p><a href="{% url 'logout' %}">logout</a></p>
+            {% else %}
+                  <p>You are not logged in.</p>
+                  <a href="{% url 'login' %}">login</a>
+            {% endif %}
+
+                {% block content %}
+                {% endblock content %}
+            </header>
+        </div>
     </body>
 </html>
