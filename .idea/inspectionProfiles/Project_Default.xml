@@ -6,6 +6,7 @@
         <list>
           <option value="W292" />
           <option value="E302" />
+          <option value="E303" />
         </list>
       </option>
     </inspection_tool>
@@ -13,6 +14,7 @@
       <option name="ignoredErrors">
         <list>
           <option value="N801" />
+          <option value="N806" />
         </list>
       </option>
     </inspection_tool>
@@ -21,6 +23,7 @@
         <list>
           <option value="blog.tests.Post" />
           <option value="blog.tests.self" />
+          <option value="blog.urls.views" />
         </list>
       </option>
     </inspection_tool>
